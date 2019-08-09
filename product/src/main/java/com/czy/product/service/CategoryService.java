@@ -1,6 +1,6 @@
 package com.czy.product.service;
 
-import com.czy.product.dto.ProductCategory;
+import com.czy.product.pojo.ProductCategory;
 
 import java.util.List;
 

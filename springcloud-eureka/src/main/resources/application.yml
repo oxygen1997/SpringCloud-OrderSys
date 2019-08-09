@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 9001
 spring:
   application:
     name: eureka
@@ -10,7 +10,7 @@ eureka:
     registerWithEureka: false  #禁止eureka服务端注册自己
     fetchRegistry: false
     service-url:
-      defaultZone: http://localhost:8001/eureka/
+      defaultZone: http://localhost:9001/eureka/
   server:
     #自我保护功能关闭
     enable-self-preservation: false

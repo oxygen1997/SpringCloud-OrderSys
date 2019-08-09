@@ -1,7 +1,6 @@
 package com.czy.product.dao;
 
-import com.czy.product.dto.ProductInfo;
-import com.netflix.discovery.converters.Auto;
+import com.czy.product.pojo.ProductInfo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +9,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

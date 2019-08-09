@@ -2,7 +2,7 @@ package com.czy.product.service.impl;
 
 import com.czy.product.ProductApplicationTests;
 import com.czy.product.dao.ProductCategoryDao;
-import com.czy.product.dto.ProductCategory;
+import com.czy.product.pojo.ProductCategory;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +10,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 @Component
 public class CategoryServiceImplTest extends ProductApplicationTests {

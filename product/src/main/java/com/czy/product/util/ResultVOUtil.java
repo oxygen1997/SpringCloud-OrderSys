@@ -3,6 +3,7 @@ package com.czy.product.util;
 import com.czy.product.vo.ResultVO;
 
 public class ResultVOUtil {
+
     public static ResultVO success(Object obj){
          ResultVO<Object> result = new ResultVO<>();
          result.setCode(0);
