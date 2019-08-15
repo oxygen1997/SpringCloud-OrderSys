@@ -80,7 +80,7 @@ public class ProductController {
      }
      @PostMapping("/decreaseProductStock")
      public void decreaseProductStock(@RequestBody List<DecreaseStockInput> decreaseStockInputList){
-          List<ProductInfo> productInfos = productService.decreaseProductStock(decreaseStockInputList);
+          productService.decreaseProductStock(decreaseStockInputList);
      }
 
 }

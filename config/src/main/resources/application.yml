@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+         uri: https://gitee.com/zeyi_chen/config-repo
+         username: chzeyi@126.com
+         password: alone23305
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+server:
+  port: 9999

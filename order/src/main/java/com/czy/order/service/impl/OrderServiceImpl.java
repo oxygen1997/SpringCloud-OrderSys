@@ -12,10 +12,15 @@ import com.czy.order.pojo.OrderMaster;
 import com.czy.order.pojo.ProductInfo;
 import com.czy.order.service.OrderService;
 import com.czy.order.util.GenUniqueKeyUtil;
+import org.springframework.amqp.rabbit.annotation.Exchange;
+import org.springframework.amqp.rabbit.annotation.Queue;
+import org.springframework.amqp.rabbit.annotation.QueueBinding;
+import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +37,9 @@ public class OrderServiceImpl implements OrderService {
      @Autowired
      ProductClient productClient;
 
+
      @Override
+     @Transactional
      public OrderDTO create(OrderDTO orderDTO) {
           //生成唯一id设置orderid
           String orderId = GenUniqueKeyUtil.getUniqueKey();
@@ -74,6 +81,7 @@ public class OrderServiceImpl implements OrderService {
                carDTO.setProductQuantity(productQuantity);
                carDTOs.add(carDTO);
           }
+
           productClient.decreaseProduct(carDTOs);
 
           //订单主体入库
@@ -84,7 +92,6 @@ public class OrderServiceImpl implements OrderService {
           orderMaster.setOrderStatus(OrderStatusEnum.NEW.getCode());
           orderMaster.setPayStatus(PayStatusEnum.WAIT.getCode());
           orderMasterRepository.save(orderMaster);
-
           return orderDTO;
      }
 }

@@ -39,6 +39,7 @@ public class OrderController {
           //判断表单参数是否正确
           if(bindingResult.hasErrors()){
                log.error("[创建订单]参数不正确,orderForm={}",orderForm);
+               new Error();
                throw new OrderException(ResultEnum.PARAM_ERROR.getCode(),bindingResult.getFieldError().getDefaultMessage());
           }
           //表单参数正确，将表单数据转换为OrderDTO数据传输对象

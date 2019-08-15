@@ -10,5 +10,5 @@ public interface ProductService {
      /** 加一个In表示在形参范围内的值 */
      List<ProductInfo> findList(List<String> productList);
      //扣库存的方法
-     List<ProductInfo> decreaseProductStock(List<DecreaseStockInput> decreaseStockInputList);
+     void decreaseProductStock(List<DecreaseStockInput> decreaseStockInputList);
 }
