@@ -1,0 +1,18 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: eureka
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    registerWithEureka: false  #禁止eureka服务端注册自己
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://localhost:9001/eureka/
+  server:
+    #自我保护功能关闭
+    enable-self-preservation: false
+    # 清理服务器
+    eviction-interval-timer-in-ms: 5000
