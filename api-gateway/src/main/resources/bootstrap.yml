@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: CONFIG #config组件名
+      profile: dev
+      label: master
+      uri: http://localhost:9999
+zuul:
+  routes:
+
