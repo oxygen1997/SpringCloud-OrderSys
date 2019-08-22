@@ -45,7 +45,11 @@ public class PreTokenFilter extends ZuulFilter {
           String token = request.getParameter("token");
 //          token值为空的处理
           if(StringUtils.isEmpty(token)){
+<<<<<<< HEAD
 			   //工作开发中，会在此处从数据库或者redis中获取token来鉴权
+=======
+               //工作开发中，会在此处从数据库或者redis中获取token来鉴权
+>>>>>>> 75bcf200a40e3742ca3d0229bffe159648d61a07
                context.setSendZuulResponse(false);
 //               设置响应码  权限不足 401
                context.setResponseStatusCode(HttpStatus.SC_UNAUTHORIZED);
